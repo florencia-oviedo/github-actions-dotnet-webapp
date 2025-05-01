@@ -20,8 +20,13 @@ jobs:
         with:
           dotnet-version: '7.x' # Altere para la versión necesaria
 
-      # - name: Restore dependencies
-      #   run: dotnet restore
+      - name: Run a pre-existing GitHub Action
+        uses: actions/cache@v3
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/github4women.csproj') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
 
       - name: Build project
         run: dotnet build github4women/github4women.csproj --no-restore --configuration Release
