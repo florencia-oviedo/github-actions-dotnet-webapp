@@ -24,7 +24,7 @@ jobs:
       #   run: dotnet restore
 
       - name: Build project
-        run: dotnet build --no-restore --configuration Release
+        run: dotnet build github4women/github4women.csproj --no-restore --configuration Release
 
       - name: Simple script
         run: echo "Este es un script simple ejecutado cada hora"
