@@ -18,7 +18,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '7.x' # Altere para la versión necesaria
+          dotnet-version: '8.x' # Actualizado para usar .NET 8.0
 
       - name: Run a pre-existing GitHub Action
         uses: actions/cache@v3
