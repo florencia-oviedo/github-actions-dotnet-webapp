@@ -28,6 +28,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nuget-
 
+      - name: Restore dependencies
+        run: dotnet restore github4women/github4women.csproj
+
       - name: Build project
         run: dotnet build github4women/github4women.csproj --no-restore --configuration Release
 
